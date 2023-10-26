@@ -1,5 +1,15 @@
     <h1><%= @list.name %></h1>
     <br>
     <%# this is going to be list content %>
-    <p><%= %></p>
-    <p><%= %></p>
+    <ul>
+      <% @bookmarks.each do |bookmark| %>
+        <li><%= bookmark.movie.title %> - <%= bookmark.comment %>
+        <br>
+        <%= link_to "Delete bookmark",
+          bookmark_path(bookmark),
+          data: {turbo_method: :delete}
+        %>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
