@@ -1,0 +1,7 @@
+    <h1>Lists</h1>
+    <%= link_to "Add a list", new_list_path(@list), :class=>"btn btn-secondary" %>
+    <ul>
+      <% @lists.each do |list| %>
+        <li><%= list.name %><%= link_to "See details", list_path(list) %></li>
+      <% end %>
+    </ul>
