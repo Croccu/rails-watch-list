@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <div class="container-navbar d-flex justify-content-between align-items-center p-3 bg-light shadow-sm">
+      <h3>Movie List</h3>
+      <%= link_to "Homepage", lists_path, :class=>"btn btn-warning" %>
+    </div>
     <%= yield %>
   </body>
 </html>

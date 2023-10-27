@@ -1,7 +1,20 @@
-    <h1>Lists</h1>
-    <%= link_to "Add a list", new_list_path(@list), :class=>"btn btn-secondary" %>
-    <ul>
+<div>
+  <div class="bg-success d-flex justify-content-between align-items-center p-3">
+    <ul class="container d-flex flex-row-reverse align-items-center justify-content-around list-unstyled">
+      <%= link_to "Add", new_list_path(@list), :class=>"btn btn-secondary" %>
       <% @lists.each do |list| %>
-        <li><%= list.name %><%= link_to "See details", list_path(list) %></li>
+        <li><%= link_to list.name, list_path(list), :class=>"btn btn-light mx-2" %></li>
       <% end %>
     </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @movies.each do |movie| %>
+        <div class="col-3", style="background-image: url('<%%>');">
+          <%= image_tag movie[:poster_url], alt: movie[:title], :class=>"col-12" %>
+          <%= movie[:title] %>
+        </div>
+      <% end %>
+  </div>
+</div>
